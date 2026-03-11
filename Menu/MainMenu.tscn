@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://b3u3ey1h4gwcw"]
+
+[ext_resource type="Theme" uid="uid://fokx2du4r6xh" path="res://xxprototipe/Menu/MainMenu.tres" id="1_idegf"]
+[ext_resource type="Script" uid="uid://cuq01ja56aift" path="res://xxprototipe/Menu/MainMenu.gd" id="2_gnvcf"]
+[ext_resource type="Texture2D" uid="uid://ppb0obci17re" path="res://xxprototipe/Menu/interfas v1..jpeg" id="3_543tf"]
+[ext_resource type="Texture2D" uid="uid://bxjp1xdmtncex" path="res://xxprototipe/Graphics/HUD/New Game.png" id="4_aqp0t"]
+[ext_resource type="Texture2D" uid="uid://cx36wq3uiroel" path="res://xxprototipe/Graphics/HUD/83c52153e7792ad88e11debffb9886cd.webp" id="5_uhqpt"]
+[ext_resource type="FontFile" uid="uid://bug6bdct05sxs" path="res://xxprototipe/Menu/ARIAL.TTF" id="5_v3iv7"]
+[ext_resource type="PackedScene" uid="uid://42q6vd88na6l" path="res://xxprototipe/fade_in/FadeIn.tscn" id="6_dn6px"]
+[ext_resource type="PackedScene" uid="uid://dok3pjh1bn7q7" path="res://xxprototipe/Menu/UISound.tscn" id="7_shcjs"]
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("5_v3iv7")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/18/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+
+[node name="Title Screen" type="Control" unique_id=979737208]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_idegf")
+script = ExtResource("2_gnvcf")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1973764559]
+position = Vector2(723.99963, 442)
+scale = Vector2(1.3819648, 1.4498044)
+texture = ExtResource("3_543tf")
+offset = Vector2(160, 80)
+
+[node name="Menu" type="VBoxContainer" parent="." unique_id=107467246]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 532.0
+offset_right = 664.0
+offset_bottom = 803.0
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu" unique_id=1919536370]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow" unique_id=1056065474]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Menu/CenterRow/Buttons" unique_id=1345108608]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("4_aqp0t")
+flat = true
+
+[node name="OptionsButton" type="Button" parent="Menu/CenterRow/Buttons" unique_id=958370796]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("5_uhqpt")
+flat = true
+
+[node name="CreditsButton" type="Button" parent="Menu/CenterRow/Buttons" unique_id=791429658]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "CREDITS"
+flat = true
+
+[node name="ExitButton" type="Button" parent="Menu/CenterRow/Buttons" unique_id=769304562]
+layout_mode = 2
+text = "EXIT"
+flat = true
+
+[node name="0_0_5" type="Label" parent="Menu" unique_id=1709764696]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme_override_fonts/font = SubResource("2")
+text = "Version 0.0.5 You can do it again"
+uppercase = true
+
+[node name="FadeIn" parent="." unique_id=1747950083 instance=ExtResource("6_dn6px")]
+visible = false
+layout_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UISound" parent="." unique_id=1097887479 instance=ExtResource("7_shcjs")]
+
+[connection signal="pressed" from="Menu/CenterRow/Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
