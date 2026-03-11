@@ -10,15 +10,15 @@ func _ready():
 	ConfigManager.load_audio_volumes()
 
 func _on_start_button_pressed():
-	scene_path_to_load = "res://Game.tscn"
+	scene_path_to_load = "res://Scenes/Nights/nights.tscn"
 	on_Button_pressed()
 
 func _on_options_button_pressed():
-	scene_path_to_load = "res://Menu/Options.tscn"
+	scene_path_to_load = "res://Graphics/Menu/Options.tscn"
 	on_Button_pressed()
 
 func _on_credits_button_pressed():
-	scene_path_to_load = "res://Menu/Credits.tscn"
+	scene_path_to_load = "res://Graphics/Menu/Credits.tscn"
 	on_Button_pressed()
 
 func _on_exit_button_pressed():

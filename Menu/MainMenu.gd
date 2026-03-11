@@ -3,7 +3,7 @@ extends Control
 var scene_path_to_load
 
 func _on_start_button_pressed():
-	scene_path_to_load = "res://Nights/nights.tscn"
+	scene_path_to_load = "res://Scenes/Nights/nights.tscn"
 	on_Button_pressed()
 
 func _on_options_button_pressed():
