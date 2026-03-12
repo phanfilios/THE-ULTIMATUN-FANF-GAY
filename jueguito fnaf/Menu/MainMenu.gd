@@ -2,15 +2,8 @@ extends Control
 
 var scene_path_to_load
 
-func _ready():
-	set_process_input(true)
-	if ConfigManager.load_fullscreen_setting():
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	MusicManager.playMainMenuMusic()
-	ConfigManager.load_audio_volumes()
-
 func _on_start_button_pressed():
-	scene_path_to_load = "res://Game.tscn"
+	scene_path_to_load = "res://Scenes/Nights/nights.tscn"
 	on_Button_pressed()
 
 func _on_options_button_pressed():

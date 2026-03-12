@@ -27,7 +27,7 @@ func _on_CheckBox_pressed():
 	ConfigManager.save_fullscreen_setting(fullscreenEnabled)
 
 func _on_FadeIn_fade_finished():
-	get_tree().change_scene_to_file("res://Menu/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Graphics/Menu/MainMenu.tscn")
 
 func _ready():
 	set_process(true)
